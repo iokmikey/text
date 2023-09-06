@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="">
+    <meta name="author" content="">
+    <meta name="Content-Type" content="text/html; utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_54.css">
+    <script type="text/javascript" src="js/echarts.min.js"></script> 
+
+    <title>Statistics</title>
+    <style>
+                .menu li:nth-child(3) a:before,
+        .menu li:nth-child(3) a::after,
+        .menu li:nth-child(3):before,
+    .menu li:nth-child(3):after{border-color:  #f4e925; opacity: 1;}
+        .mainbox_ul{
+            width: 100%;
+        }
+        .mainbox_ul>li{
+            /* width: 48%; */
+            height: 450px;
+        }
+    
+        .box{
+            height: 100%
+        }
+        .allnav{
+            height: 330px;
+        }
+        .box_time{
+            float: right;
+            margin-right: 30px;
+            
+        }
+        .box_times{
+            padding-left: 5px;background: rgba(0,0,0,0);color: #fff;height: 40px;margin:20px 5px 0 30px;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="head clearfix">
+
+
+		
+			<div class="menu menu2 pulll_left">
+			<ul>      
+				<li ><a href="#" class="ind" >主界面</a></li>
+				
+				<li><a href="#" class="set" >设置</a></li>
+				<li><a href="#"  style="color:  #f4e925;">统计</a></li>
+				<li><a href="#">更新维护</a></li>
+				<li><a href="#">帮助</a></li>
+				
+			</ul>
+			</div>
+            <h1 class="pulll_left">智能安检监控平台</h1>
+		
+		
+			<div class="time" id="showTime">2018/6/12 17:00:12</div>
+		</div>
+
+
+        <div class="mainbox">
+            <ul class="clearfix nav1 mainbox_ul">
+               <li style="width: 67%;">
+                    
+                    <div class="box">
+                        <div class="box_time">
+                            <input type="date" class="box box_times" style="" id="time_start">
+                        -
+                            <input type="date" class="box box_times" style="margin-left: 5px;" id="time_end">
+                        </div>
+                        
+                        <div class="lefttime"><h2 class="tith2" style="">违禁物类别统计</h2>
+                        <div class="allnav" id="echart1"></div>
+                        </div>
+                    </div>
+               </li>
+               <li style="width: 30%;">
+                <div class="box">
+                    <div class="lefttime"><h2 class="tith2" style="">违禁物类别统计</h2>
+                        <div class="allnav" id="echart2" style="">
+            
+                        </div>
+                    </div>
+               </li>
+            </ul>
+            <ul class="clearfix nav1 mainbox_ul" style="margin-top: 20px;">
+            <li style="width: 50%;">
+                <div class="box">
+                    
+                </div>
+            </li>
+            <li style="width: 50%;">
+                <div class="box"></div>
+            </li>
+           </ul>
+    
+        </div>
+</body>
+
+
+<script src="js/statistics.js"></script>
+<script src="./js/url.js"></script>
+<script>
+
+let ind=document.querySelector(".ind")
+let set=document.querySelector(".set")
+ind.onclick=function(){
+         passSelectedValue('index',ind)
+ }
+set.onclick=function(){
+    passSelectedValue('settings',set)
+}
+    function passSelectedValue(hrefs,obj) {
+                        // 	 // 获取传输过来值
+        var urlParams = new URLSearchParams(window.location.search);
+        var selectedParam = urlParams.get('selected');
+        var background_color=urlParams.get("back")
+
+        let href_lj=''
+            if(hrefs=='index'){
+                href_lj=`${hrefs}.html?selected=${selectedParam}&back=${background_color}`
+            }else if(hrefs=='settings'){
+                href_lj=`${hrefs}.html?selected=${selectedParam}&back=${background_color}`
+            }
+    
+            console.log(href_lj);
+    // 修改跳转链接为新链接地址
+    // console.log(href_lj);
+            obj.href=href_lj
+}
+</script>
+
+
+</html>

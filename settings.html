@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="">
+    <meta name="author" content="">
+    <meta name="Content-Type" content="text/html; utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/style_54.css">
+
+ 
+    <title>setup</title>
+    <style>
+        /* p{
+            color: #fff;
+            letter-spacing:2px
+        }
+        .menu li:nth-child(2) a:before,
+        .menu li:nth-child(2) a::after,
+        .menu li:nth-child(2):before,
+    .menu li:nth-child(2):after{border-color:  #f4e925; opacity: 1;} 
+    .nav1 >li{
+        width: 100%;
+        float:none;
+    }
+    .lefttime{
+        width: 100%;
+        margin-left: 0;
+    }
+    .tith2{
+        padding-top: 0;
+    }
+    .lefttime_text>ul>li{
+        width: 100px;
+        margin-left:30px
+    }*/
+    .serviceForm{
+        width:95%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+    .box_xq{
+        display: flex;background: rgba(0,0,0,0);flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .box_xq>li{
+        width: 45%;
+        display: flex;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 10px;
+    }
+    #selectElem{
+        width: 100px;
+    }
+    .box_xq>li div{
+        margin-left: 20px;
+        width: 35px;
+        cursor: pointer;
+
+    }
+    .zt_on{
+        border: 3px solid #ffffff !important;
+    }
+    .serviceForm img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+
+    
+  
+    </style>
+</head>
+
+<body>
+    <div class="head clearfix">
+
+
+		<h1 class="pulll_left">智能安检监控平台</h1>
+			<div class="menu menu2 pulll_left">
+			<ul>      
+				<li ><a href="#" class="ind" onclick="">主界面</a></li>
+				
+				<li><a href="#"  style="color:  #f4e925;" >设置</a></li>
+				<li><a href="#" class="sta" >统计</a></li>
+				<li><a href="#">更新维护</a></li>
+				<li><a href="#">帮助</a></li>
+				
+					
+				
+			</ul>
+			</div>
+			
+		
+			<div class="time" id="showTime">2018/6/12 17:00:12</div>
+		</div>
+
+
+    <div class="mainbox">
+        <ul class="clearfix nav1">
+            <li>
+                <div class="box" style="height: 400px;">
+                    <div class="lefttime"><h2 class="tith2" style="margin-top: 20px;">选中违禁物类别</h2>
+                        <div class="lefttime_text" >
+                           <ul>
+                            
+                           </ul>
+                        </div>
+                       </div>
+        
+                    </div>
+ 
+                </li>
+        </ul>
+        <ul class="clearfix nav1" style="display: flex; justify-content: space-around;">
+            <li style="width: 47%;">
+                <div class="box" >
+                    <div class="tit">详情设置</div>
+                    <div class="serviceForm">
+                        <ul class="box_xq">
+				
+                            <li class="back_color">
+                                
+                                <p>主题颜色：</p>
+                                <!-- #081325 #174a9b  #1e69e0-->
+                                <div class="zt_on" style="background: #081325;"></div>
+                                <div class="zt_on" style="background: #1a222e;"> </div>
+                                <div class="zt_on" style="background: #001b46;"></div>
+                            </li>
+                            <li></li>
+                            <li>
+                                
+                                <p>线框粗细：</p>   
+                                <input type="range" min="1" max="100" value="1" id="range">
+                                <span class="range_span" style="margin-left: 5px;">1</span>
+                               
+                            </li>
+                            <li class="linear_color">
+                                <p>线框颜色：</p>
+                                <!-- 传  rgb颜色 -->
+                                <!-- #081325 #174a9b  #1e69e0-->
+                                <div class="zt_on" style="background: #ff0d0d;" cl="#ff0d0d;"></div>
+                                <div style="background: #24ff1c;" cl="#24ff1c;"> </div>
+                                <div style="background: #eeff05;" cl="#eeff05;"></div>
+                            </li>
+                            <li>
+                                
+                                <p>置信度：</p>   
+                                <input type="range" min="0" max="100" value="50" id="confidence">
+                                <span class="confidence_span" style="margin-left: 5px;">50</span>
+                               
+                            </li>
+                            <li>
+                                
+                                <p>准确度：</p>   
+                                <input type="range" min="0" max="100" value="50" id="accuracy">
+                                <span class="accuracy_span" style="margin-left: 5px;">50</span>
+                               
+                            </li>
+                            </ul>
+                 
+                    </div>
+             
+                    </div>
+            </li>
+
+            <li style="width: 47%;">
+                <div class="box" >
+                    <div class="tit">设置示例</div>
+                    <div class="serviceForm ser_sl" style="position: relative;">
+                        <div class="ser" style="width: 100px;height: 200px;border: 1px solid red;position: absolute;top: 0;left: 0;"></div>
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <script src="js/settings.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/url.js"></script>
+
+    <script>
+        let body = document.querySelector("body")
+        var urlParams = new URLSearchParams(window.location.search);
+
+        var background_color = urlParams.get('back');
+        if(background_color){
+             body.style.background=background_color
+            }else{
+                var background_color=''
+        }
+
+        // change back
+        let back_color = document.querySelectorAll(".back_color div")
+        for (let j = 0; j < back_color.length; j++) {
+            back_color[j].onclick = function () {
+
+                background_color=back_color[j].style.background
+                body.style.background = background_color
+            }
+        }
+
+        // 粗细
+        let range = document.querySelector("#range")
+        let range_span = document.querySelector(".range_span")
+        let value = 1
+        range.addEventListener("input", function () {
+                value = range.value/10
+
+                range_span.innerHTML = value
+                ser.style.border = value + "px solid " + color
+
+            
+            });
+
+
+            // 线框颜色
+        let linear_color_div = document.querySelectorAll(".linear_color div")
+        let ser = document.querySelector(".ser")
+        let color = linear_color_div[0].style.background
+            //    col()
+            for (let i = 0; i < linear_color_div.length; i++) {
+
+                linear_color_div[i].onclick = function () {
+
+                    for (let z = 0; z < linear_color_div.length; z++) {
+                        linear_color_div[z].className = ''
+                    }
+                    linear_color_div[i].className = 'zt_on'
+                    ser.style.border = value + "px solid " + linear_color_div[i].style.background
+
+                    // col()
+                    color = linear_color_div[i].style.background
+
+                }
+            }
+
+
+
+       
+    </script>
+</body>
+
+</html>

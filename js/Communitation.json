@@ -1,0 +1,73 @@
+
+
+
+/* 设置默认目录*/
+
+// client -> server
+{
+    "version": "1.0",
+    "cmd": "SwitchModel",
+    "args": {
+        "ModelName": "yolov5n.onnx"
+    }
+}
+
+// server- > client
+{
+    "version": "1.0",
+    "cmd": "ModelLoaded",
+    "args": {
+        "label": ["knife", "powerbank", "gun"], // 等等
+        "statistics": {
+            "knife": 23,
+            "powerbank": 21,
+            "gun": 211
+        }
+    }
+}
+
+
+confidence threshold
+iou threshold
+
+// server -> client
+{
+    "version": "1.0",
+    "cmd": "SendResult",
+    "args": {
+        "OriginalImage": "/home/wxxz/tools/images/p2832.jpg",  // 这个是原图
+        "DetectedItem": [  
+            {
+                "label": "gun",
+                "confidence": 98.2,
+                "coordinate": [21, 23.1,23,51],   //用来框违禁物品的坐标
+                "path": "/home/wxxz/tools/images/p8766.jpg" //这个是违禁物截图吗？
+            },
+            {
+                "label": "gun",
+                "confidence": 98.2,
+                "coordinate": [21, 23.1],
+                "path": "/home/wxxz/tools/images/p8766.jpg"
+            },
+            {
+                "label": "gun",
+                "confidence": 98.2,
+                "coordinate": [21, 23.1],
+                "path": "/home/wxxz/tools/images/p8766.jpg"
+            }
+        ]
+    }   
+}
+
+
+// client -> server
+{
+    "version": "1.0",
+    "cmd": "UpdateSettings",
+    "args": {
+        "confidence": 50.4,         // 置信度
+        "iou": 50.5,                // 交并比
+        "BoxColor": [123, 223, 110],// rgb
+        "BoxLineSize": 12
+    }
+}
